@@ -254,7 +254,26 @@
                         case 39:
                         // bottom arrow key
                         case 40:
-                            // arrow keys should work normally
+                        // arrow keys should work normally
+
+                        //shift
+                        case 16:
+                        //ctrl
+                        case 17:
+                        //alt
+                        case 18:
+                        //page up
+                        case 33:
+                        //page down
+                        case 34:
+                        //end
+                        case 35:
+                        //home
+                        case 36:
+                        //left window/command
+                        case 91:
+                        //right window/command
+                        case 92:
                             break;
                         // backspace key
                         case 8:
