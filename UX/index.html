@@ -1,0 +1,545 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="favicon.png">
+
+        <title>VPAL / HarvardX AnnotationX</title>
+
+        <!-- Bootstrap core CSS -->
+        <!-- http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <link href="ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="dashboard.css" rel="stylesheet">
+
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]>
+        <script src="ie8-responsive-file-warning.js"></script><![endif]-->
+        <script src="ie-emulation-modes-warning.js"></script>
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="html5shiv.min.js"></script>
+        <script src="respond.min.js"></script>
+        <![endif]-e-->
+
+        <!-- Harvard Branding -->
+        <style>
+              .nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
+                color: #fff;
+                background-color: #A51C30;
+              }
+              a {
+                color: #A51C30;
+                text-decoration: none;
+              }
+              h1, h2{
+                color: #A51C30;
+              }
+              h2{
+                color: #A51C30;
+                border-top:1px solid #eee;
+                padding: 1em 0 0 0;
+              }
+              img.border {
+                border:1px solid #eee;
+              }
+              .img-hover img {
+                  -webkit-transition: all .3s ease; /* Safari and Chrome */
+                  -moz-transition: all .3s ease; /* Firefox */
+                  -o-transition: all .3s ease; /* IE 9 */
+                  -ms-transition: all .3s ease; /* Opera */
+                  transition: all .3s ease;
+              }
+              .img-hover img:hover {
+                  -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+                  -webkit-transform:translateZ(0) scale(1.01); /* Safari and Chrome */
+                  -moz-transform:scale(1.01); /* Firefox */
+                  -ms-transform:scale(1.01); /* IE 9 */
+                  -o-transform:translatZ(0) scale(1.01); /* Opera */
+                  transform:translatZ(0) scale(1.01);
+
+                border:1px solid #A51C30;
+              }
+              .grayscale {
+                -webkit-filter: brightness(1.10) grayscale(100%) contrast(90%);
+                -moz-filter: brightness(1.10) grayscale(100%) contrast(90%);
+                filter: brightness(1.10) grayscale(100%);
+              }
+              .text-muted-description { /*component descendent to indent description*/
+                color: #777;
+                padding-left:1em;
+              }
+              .table {
+               font-size: 1em;
+               }
+
+
+        </style><!-- /Harvard Branding -->
+
+    </head>
+
+    <body>
+
+        <!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+
+            <!--<div class="container-fluid">-->
+
+                <!--<div class="navbar-header" style="width: 100%;">-->
+
+                    <!--<div class="container-fluid">-->
+
+                        <!--<div class="">-->
+                            <!--<a class="navbar-brand">-->
+                                <!--<img src="harvard-logo.png">-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="" style="margin-top:-.35em;">-->
+                            <!--<p class="navbar-text" style="color: #ccc; font-size: 1.5em;">VPAL / HarvardX AnnotationX</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+      <!--<ul class="nav navbar-nav">-->
+        <!--<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>-->
+        <!--<li><a href="#">Link</a></li>-->
+      <!--</ul>-->
+                <!--</div>-->
+
+                <!--</div>&lt;!&ndash; / navbar-header &ndash;&gt;-->
+
+            <!--</div>&lt;!&ndash; / container-fluid &ndash;&gt;-->
+        <!--</nav>&lt;!&ndash; / navbar &ndash;&gt;-->
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand">
+                  <img src="harvard-logo.png">
+              </a>
+                <p class="navbar-text" style="color: #ccc; font-size: 1.5em; margin-top: .5em; white-space: nowrap; ">VPAL / HarvardX AnnotationX</p>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right" style="margin-right: 1em; margin-top: .25em;">
+                <li>
+                    <a href="mailto:vittorio_bucchieri@harvard.edu?subject=HarvardX%20AnnotationX%20usability%20review">
+                        <i class="far fa-envelope fa-lg"></i>
+                    </a>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- Left Nav -->
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-pills nav-stacked left-menu" id="stacked-menu" style="margin-left:-1.25em">
+
+                        <li><a href="#Overview">Overview</a></li>
+
+                        <li><!-- Accessibility -->
+
+                            <a href="#Usability" data-target="#item2" data-toggle="collapse" data-parent="#stacked-menu"
+                               class="collapsed">Usability&nbsp;Review <span class="caret arrow"></span></a>
+
+                            <ul class="nav nav-pills nav-stacked collapse" id="item2" style="height: 0px;">
+                                <li><a href="#UsabilitySpecifications" style="padding-left: 3em; margin-top: -1em;">Specifications</a></li>
+                                <li><a href="#UsabilitySummary" style="padding-left: 3em; margin-top: -1em;">Summary</a></li>
+                                <li><a href="#UsabilityIconography" style="padding-left: 3em; margin-top: -1em;">
+                                    Iconography</a>
+                                </li>
+                                <li class="text-muted" style="padding-left: 3em; margin-bottom: .5em;">
+                                    Text Annotations
+                                </li>
+                                <li class="text-muted" style="padding-left: 3em; margin-bottom: .5em;">
+                                    Image Annotations
+                                </li>
+                                <li class="text-muted" style="padding-left: 3em; margin-bottom: .5em;">
+                                    Video Annotations
+                                </li>
+                            </ul>
+
+                        </li><!-- / Usability -->
+
+                        <li class="text-muted" style="padding-left: 1em; margin-top: .75em;"><!-- Accessibility -->
+                            Accessibility
+                        </li><!-- /Accessibility -->
+
+                        <li class="text-muted" style="padding-left: 1em; margin-top: 1.5em;"><!-- Mobility -->
+                            Mobility
+                        </li><!-- /Mobility -->
+
+                    </ul>
+                </div><!-- Left Nav -->
+
+                <!-- Right Nav -->
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+                    <!-- Overview start -->
+                    <div class="col-sm-12">
+                        <h1 class="page-header" id="Overview">Overview</h1>
+                    </div>
+
+                    <div class="col-sm-12">
+                        Usability Evaluation focuses on how well users can learn and use a product to achieve their
+                        goals. It also refers to how satisfied users are with that process. To gather this information,
+                        practitioners use a variety of methods that gather feedback from users about an existing site or
+                        plans related to a new site.
+                    </div><!-- / Usability Evaluation -->
+                    <div class="col-sm-12">
+                        <p class="text-muted pull-right">
+                            <small>
+                            (Source:
+                            <a href="https://www.usability.gov/what-and-why/usability-evaluation.html" target="_blank">
+                                Usability.gov
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small></a>)
+                            </small>
+                        </p>
+                    </div><!-- / Usability Evaluation -->
+
+                    <div class="col-sm-12">
+                        A usability review is taking a system and comparing it to a list of “best practice
+                        standards” for usability. They tend to fall into two categories – scenario-based reviews and
+                        heuristic reviews. The former is walking through a product based on a scenario or scenarios
+                        that users are likely to face. For example, get on the website and buy a camera. The latter,
+                        involves carrying out tests against a list of heuristics (those best practice standards).
+                        <br>
+                        In practice the two tend to end up blurred into one as they can be most effective when used
+                        together rather than separately.
+                    </div><!-- / usability review -->
+                    <div class="col-sm-12">
+                        <p class="text-muted pull-right">
+                            <small>
+                            (Source:
+                            <a href="https://www.interaction-design.org/literature/article/a-quick-guide-to-conducting-a-usability-review" target="_blank">
+                                Interaction Design Foundation article
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small></a>)
+                            </small>
+                        </p>
+                    </div><!-- / usability review -->
+
+                    <div class="col-sm-12" style="margin-top: 1em;">
+                        Often the heuristic evaluation is conducted in the context of use cases (typical user
+                        tasks), to provide feedback to the developers on the extent to which the interface is likely
+                        to be compatible with the intended users' needs and preferences.
+                    </div><!-- / heuristic evaluation -->
+                    <div class="col-sm-12">
+                        <p class="text-muted pull-right">
+                            <small>
+                                (Source:
+                                <a href="https://en.wikipedia.org/wiki/Heuristic_evaluation" target="_blank">
+                                    Wikipedia
+                                    <small><i class="fas fa-external-link-alt fa-sm"></i></small>
+                                </a>)
+                            </small>
+                        </p>
+                    </div><!-- / heuristic evaluation -->
+
+                    <div class="col-sm-12" style="margin-top: 1em;">
+                        Select any of the images for a full scale view.
+                    </div>
+                    <!-- / Overview end -->
+
+                    <div class="col-sm-12">
+                        <h2 class="header" id="Usability">
+                            Usability Review
+                        </h2>
+                    </div><!-- / Usability header-->
+
+
+                    <div class="col-sm-12">
+                        <h3 class="header" id="UsabilitySpecifications">
+                            Specifications
+                        </h3>
+                    </div><!-- / Specifications header-->
+
+                    <div class="col-sm-12">
+                        <p>
+                            This accessibility audit was conducted on a MacBook Pro with a Macintosh operating system version
+                            10.13.6.
+                        </p>
+                        <p>
+                            The product was accessed with a Chrome browser via
+                            <a href="https://edge.edx.org/courses/course-v1:HarvardX+TECH1+2018/course/#block-v1:HarvardX+TECH1+2018+type@chapter+block@665eac159a22407b962d4c6ba1da9975" target="_blank">
+                                edX Edge, HarvardX: TECH1, Hx Tech Demos
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://developers.google.com/web/tools/chrome-devtools/inspect-styles/" target="_blank">
+                                Google Inspect
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small>
+                            </a>
+                            was used for code inspection and user interface recommendations.
+                        </p>
+                        <p>
+                            User interface code was stored in GitHub repository
+                            <a href="https://github.com/Vittorio2015/hxat/tree/master" target="_blank">
+                                Vittorio2015/hxat
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small>
+                            </a>
+                        </p>
+                    </div><!-- / Specifications information-->
+
+                    <div class="col-sm-12">
+                        <h3 class="header" id="UsabilitySummary">
+                            Summary
+                        </h3>
+                    </div><!-- / Summary header-->
+
+                    <div class="col-sm-12">
+                        <p>
+                            At this early stage of this review, consistency across the three media (text, images and
+                            videos) needs to be addressed.
+                            <br>
+                            Although each medium is different, the user's experience should be intuitive and with little
+                            need of relearning the function of each icon.
+                            <br>
+                            Using different icons for similar functions (as perceived by the users) can be confusing.
+                            <br>
+                            Ensuring that these icons behave consistently (i.e.: "turned on" and "off" or reveal, etc.),
+                            that they are visible with sufficient contrast and over any background (e.g. image editing
+                            icons) improve intuitiveness and efficiency.
+                        </p>
+                    </div><!-- / Summary information-->
+
+                    <div class="col-sm-12">
+                        <h3 class="header" id="UsabilityIconography">
+                            Iconography
+                        </h3>
+                    </div><!-- /  Iconography heading-->
+
+                    <div class="col-sm-12">
+                        Iconography is a visual language used to represent features, functionality, or content. Icons
+                        are meant to be simple, visual elements that are recognized and understood immediately.
+                        <br>
+                        In many cases, there are already standard icons for the devices and OS your app is targeting.
+                        For example, the icon used to represent a calendar and calculator. Users of a particular
+                        platform are typically already accustomed to and understand these standard icons. So as a
+                        general rule, unless you have a specific reason for doing otherwise, you’ll want to defer to
+                        these standard icon sets whenever possible to save time and ensure easier user interaction.
+                        <br>
+                        Likewise, consistency ensures that each icon has equal weight, drawing your users’ eyes equally.
+                    </div><!-- /  Iconography intro-->
+
+                    <div class="col-sm-12">
+                        <p class="text-muted pull-right">
+                            <small>
+                            (Source:
+                            <a href="https://blogs.windows.com/buildingapps/2016/06/02/using-iconography-to-enhance-ux-design/" target="_blank">
+                                Using iconography to enhance UX design
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small></a>)
+                            </small>
+                        </p>
+                    </div><!-- /  Iconography reference-->
+
+                    <div class="col-sm-12">
+                        <h4 class="header">
+                            Navigation consistency
+                        </h4>
+                    </div><!-- /  Iconography - Navigation consistency - heading-->
+
+                    <div class="col-sm-12" style="margin-bottom: 2em;">
+                        The following screen captures and annotations document instances of inconsistency.
+                        Recommendations stress consistency and readability.
+                    </div><!-- /  Iconography - Navigation consistency - summary-->
+
+                    <div class="col-sm-12 img-hover">
+                        <a href="VPAL-UxAT_iconography.png" target="_blank"
+                           title="Select to open full size image in a new tab">
+                            <img src="VPAL-UxAT_iconography.png" width="100%" class="border img-responsive img-rounded" alt="Icons comparison and recommendations">
+                        </a>
+                        <p class="text-muted">
+                            Source file for
+                            <a href="https://docs.google.com/drawings/d/11dUuVAxSArPR8T-W1EyGygs8cY5ygGdFkkStQ_7zwgQ/edit?usp=sharing" target="_blank">
+                                Icons comparison and recommendations
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small>
+                            </a>
+                        </p>
+                    </div><!-- / iconography - Navigation consistency - image-->
+
+                    <div class="row" hidden>
+
+                        <div class="col-sm-6">
+
+                            <table class="table table-bordered table-condensed">
+                                <tr>
+                                    <th>
+                                        Finding
+                                    </th>
+                                    <th>
+                                        Recommendation
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td width="50%">
+                                        <span style="font-size: 2em; vertical-align: middle; color: rgb(204, 0, 0);">
+                                            ➊
+                                        </span>
+                                        Form elements do not have associated labels.
+                                    </td>
+                                    <td width="50%">
+                                        Labels ensure that form controls are announced properly by assistive technologies,
+                                        like screen readers.
+                                        <br>
+                                        <a href="https://dequeuniversity.com/rules/axe/2.2/label?application=lighthouse" target="_blank">
+                                            Learn more about labels.
+                                            <sup><i class="fas fa-external-link-alt fa-sm"></i></sup>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">
+                                        Failing element
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <code>&lt;label&gt;</code>
+                                        <br>
+                                        &nbsp;&nbsp;<code>&lt;span class="screen-reader-text"&gt;Search&lt;/span&gt;</code>
+                                        <br>
+                                        &nbsp;&nbsp;<code>&lt;input placeholder="Search by Keyword" name="_sf_search[]" class="sf-input-text ui-autocomplete-input" type="text" value="" title="" autocomplete="off"&gt;</code>
+                                        <br>
+                                        &nbsp;&nbsp;<code>&lt;/label&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th colspan="2">
+                                        Recommendation
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Associate the <code>&lt;label&gt;</code> tag with the input field using the for
+                                        attribute whose value is the id attribute of the input. This creates an explicit,
+                                        rather than implicit, association between the label and the input field.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <code>&lt;label&gt;</code>
+                                        <br>
+                                        &nbsp;&nbsp;<code>&lt;span class="screen-reader-text" <strong>for="SearchByKeyword"</strong>&gt;Search&lt;/span&gt;</code>
+                                        <br>
+                                        &nbsp;&nbsp;<code>&lt;input placeholder="Search by Keyword" <strong>id="SearchByKeyword"</strong> name="_sf_search[]" class="sf-input-text ui-autocomplete-input" type="text" value="" title="" autocomplete="off"&gt;</code>
+                                        <br>
+                                        &nbsp;&nbsp;<code>&lt;/label&gt;</code>
+                                    </td>
+                                </tr>
+
+                            </table><!-- /  Text Annotations - Finding 1-->
+
+                        </div><!-- / Text Annotations findings and recommendations-->
+
+                        <div class="col-sm-6 img-hover">
+                            <a href="VPAL-UxAT_iconography.png" target="_blank"
+                               title="Select to open full size image in a new tab">
+                                <img src="VPAL-UxAT_iconography.png" width="100%" class="border img-responsive img-rounded" alt="Icons comparison and recommendations">
+                            </a>
+                            <p class="text-muted">
+                                Source file for
+                                <a href="https://docs.google.com/drawings/d/11dUuVAxSArPR8T-W1EyGygs8cY5ygGdFkkStQ_7zwgQ/edit?usp=sharing" target="_blank">
+                                    Icons comparison and recommendations
+                                    <small><i class="fas fa-external-link-alt fa-sm"></i></small>
+                                </a>
+                            </p>
+                        </div><!-- / Text Annotations image-->
+
+                    </div><!-- / next content... -->
+
+
+                    <div class="col-sm-12">
+                        <hr>
+                    </div><!-- / Section ruler -->
+
+                    <div class="col-sm-12" style="margin-top:40em">&nbsp;</div>
+                    <!--This div is here only to allow for enough blank vertical space so that if the last content -->
+                    <!--scrolls to the top of the browser page when selected by an anchor link.-->
+
+                </div><!-- Right Nav -->
+
+            </div><!-- / row -->
+
+        </div><!-- / container-fluid -->
+
+
+        <!-- Bootstrap script for collapse side nav - start
+        ================================================== -->
+
+        <script async="" src="//www.google-analytics.com/analytics.js"></script>
+        <!-- http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js -->
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <!-- http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js -->
+        <script type="text/javascript" src="bootstrap.min.js"></script>
+
+        <!-- Bootstrap script for collapse side nav - end
+        ================================================== -->
+
+
+        <!-- Script for smooth scroll - start
+        ================================================== -->
+        <script>
+                  $(document).on('click', 'a[href*="#"]:not([href="#"])', function(e) {
+
+                    if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+
+                        var target = $(this.hash);
+
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+                          if (target.length) {
+
+                              $('html, body').animate({
+
+                                  scrollTop: target.offset().top-70
+
+                              }, 1000);
+
+                              e.preventDefault();
+
+                          }
+
+                      }
+
+                });
+
+
+
+        </script>
+
+        <!-- Script for smooth scroll - end
+        ================================================== -->
+
+
+        <div id="window-resizer-tooltip" style="display: none;"><a href="#" title="Edit settings"></a><span
+                class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1552</span> x <span
+                class="tooltipHeight" id="winHeight">369</span><br><span class="tooltipTitle">Viewport size: </span><span
+                class="tooltipWidth" id="vpWidth">1552</span> x <span class="tooltipHeight" id="vpHeight">369</span></div>
+    </body>
+</html>
