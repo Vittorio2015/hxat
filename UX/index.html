@@ -172,8 +172,9 @@
                                 <li><a href="#UsabilityIconography" style="padding-left: 3em; margin-top: -1em;">
                                     Iconography</a>
                                 </li>
-                                <li class="text-muted" style="padding-left: 3em; margin-bottom: .5em;">
-                                    Text Annotations
+                                <li><a href="#UsabilityIconography" style="padding-left: 3em; margin-top: -1em;">
+                                    <a href="#UsabilityNavigation" style="padding-left: 3em; margin-top: -1em;">
+                                    Navigation</a>
                                 </li>
                                 <li class="text-muted" style="padding-left: 3em; margin-bottom: .5em;">
                                     Image Annotations
@@ -383,17 +384,17 @@
                     </div><!-- / iconography - Icon consistency - image-->
 
                     <div class="col-sm-12">
-                        <h4 class="header">
-                            Navigation consistency
-                        </h4>
-                    </div><!-- /  Iconography - Navigation consistency - heading-->
+                        <h3 class="header" id="UsabilityNavigation">
+                            Navigation
+                        </h3>
+                    </div><!-- /  Navigation heading-->
 
                     <div class="col-sm-12">
                         Consistency limits the number of ways actions and operations are represented, ensuring that
                         users do not have to learn new representations for each task. Further, establishing design norms
                         like following platform conventions allow users to complete new tasks without having to learn a
                         whole new toolset.
-                    </div><!-- /  Iconography - Navigation consistency - summary-->
+                    </div><!-- /  Navigation - Navigation consistency - summary-->
 
                     <div class="col-sm-12" style="margin-bottom: 1em;">
                         <p class="text-muted pull-right">
@@ -404,13 +405,19 @@
                                 <small><i class="fas fa-external-link-alt fa-sm"></i></small></a>)
                             </small>
                         </p>
-                    </div><!-- /  Iconography - Navigation consistency - summary - source-->
+                    </div><!-- /  Navigation - Navigation consistency - summary - source-->
+
+                    <div class="col-sm-12">
+                        <h4 class="header">
+                            Editing icons
+                        </h4>
+                    </div><!-- /  Navigation - Editing icons - heading-->
 
                     <div class="col-sm-12">
                         Placement consistency of graphics in a user interface system not only helps users learn the
                         system, it helps their muscles “learn” the system as well. A user’s constant and continual use
                         of a product’s UI causes their muscles to “memorize” certain movements and actions.
-                    </div><!-- /  Iconography - Navigation consistency - summary-->
+                    </div><!-- /  Navigation - Editing icons - summary-->
 
                     <div class="col-sm-12" style="margin-bottom: 2em;">
                         <p class="text-muted pull-right">
@@ -421,7 +428,7 @@
                                 <small><i class="fas fa-external-link-alt fa-sm"></i></small></a>)
                             </small>
                         </p>
-                    </div><!-- /  Iconography - Navigation consistency - summary - source-->
+                    </div><!-- /  Navigation - Editing icons - summary - source-->
 
                     <div class="col-sm-12 img-hover">
                         <a href="VPAL-UxAT_iconPlacement.png" target="_blank"
@@ -435,98 +442,46 @@
                                 <small><i class="fas fa-external-link-alt fa-sm"></i></small>
                             </a>
                         </p>
-                    </div><!-- / iconography - Navigation consistency - image-->
+                    </div><!-- / Navigation - Editing icons - image-->
 
-                    <div class="row" hidden>
 
-                        <div class="col-sm-6">
+                    <div class="col-sm-12">
+                        <h4 class="header">
+                            Annotations panel
+                        </h4>
+                    </div><!-- /  Navigation - Annotations panel - heading-->
 
-                            <table class="table table-bordered table-condensed">
-                                <tr>
-                                    <th>
-                                        Finding
-                                    </th>
-                                    <th>
-                                        Recommendation
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td width="50%">
-                                        <span style="font-size: 2em; vertical-align: middle; color: rgb(204, 0, 0);">
-                                            ➊
-                                        </span>
-                                        Form elements do not have associated labels.
-                                    </td>
-                                    <td width="50%">
-                                        Labels ensure that form controls are announced properly by assistive technologies,
-                                        like screen readers.
-                                        <br>
-                                        <a href="https://dequeuniversity.com/rules/axe/2.2/label?application=lighthouse" target="_blank">
-                                            Learn more about labels.
-                                            <sup><i class="fas fa-external-link-alt fa-sm"></i></sup>
-                                        </a>
+                    <div class="col-sm-12">
+                        The interactions that take place between the human cognition and the interface. Making things
+                        easier for users means not forcing them to learn new representations or toolsets for each task.
+                        Reducing the length of the thinking process by eliminating confusion is also a sure bet when it
+                        comes to improving user experience.
+                    </div><!-- /  Navigation - Annotations panel - summary-->
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2">
-                                        Failing element
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <code>&lt;label&gt;</code>
-                                        <br>
-                                        &nbsp;&nbsp;<code>&lt;span class="screen-reader-text"&gt;Search&lt;/span&gt;</code>
-                                        <br>
-                                        &nbsp;&nbsp;<code>&lt;input placeholder="Search by Keyword" name="_sf_search[]" class="sf-input-text ui-autocomplete-input" type="text" value="" title="" autocomplete="off"&gt;</code>
-                                        <br>
-                                        &nbsp;&nbsp;<code>&lt;/label&gt;</code>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th colspan="2">
-                                        Recommendation
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        Associate the <code>&lt;label&gt;</code> tag with the input field using the for
-                                        attribute whose value is the id attribute of the input. This creates an explicit,
-                                        rather than implicit, association between the label and the input field.
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <code>&lt;label&gt;</code>
-                                        <br>
-                                        &nbsp;&nbsp;<code>&lt;span class="screen-reader-text" <strong>for="SearchByKeyword"</strong>&gt;Search&lt;/span&gt;</code>
-                                        <br>
-                                        &nbsp;&nbsp;<code>&lt;input placeholder="Search by Keyword" <strong>id="SearchByKeyword"</strong> name="_sf_search[]" class="sf-input-text ui-autocomplete-input" type="text" value="" title="" autocomplete="off"&gt;</code>
-                                        <br>
-                                        &nbsp;&nbsp;<code>&lt;/label&gt;</code>
-                                    </td>
-                                </tr>
+                    <div class="col-sm-12" style="margin-bottom: 2em;">
+                        <p class="text-muted pull-right">
+                            <small>
+                            (Source:
+                            <a href="https://www.interaction-design.org/literature/article/principle-of-consistency-and-standards-in-user-interface-design" target="_blank">
+                                Interaction Design Foundation article
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small></a>)
+                            </small>
+                        </p>
+                    </div><!-- /  Navigation - Annotations panel - summary - source-->
 
-                            </table><!-- /  Text Annotations - Finding 1-->
-
-                        </div><!-- / Text Annotations findings and recommendations-->
-
-                        <div class="col-sm-6 img-hover">
-                            <a href="VPAL-UxAT_iconography.png" target="_blank"
-                               title="Select to open full size image in a new tab">
-                                <img src="VPAL-UxAT_iconography.png" width="100%" class="border img-responsive img-rounded" alt="Icons comparison and recommendations">
+                    <div class="col-sm-12 img-hover">
+                        <a href="VPAL-UxAT_panel.png" target="_blank"
+                           title="Select to open full size image in a new tab">
+                            <img src="VPAL-UxAT_panel.png" width="100%" class="border img-responsive img-rounded" alt="Icons placement and recommendations">
+                        </a>
+                        <p class="text-muted">
+                            Source file for
+                            <a href="https://docs.google.com/drawings/d/1-nxZ5_sH0W2KMcW86zHYVuyUz0vdIHbSWXwn0SK62t4/edit?usp=sharing" target="_blank">
+                                Annotations panel
+                                <small><i class="fas fa-external-link-alt fa-sm"></i></small>
                             </a>
-                            <p class="text-muted">
-                                Source file for
-                                <a href="https://docs.google.com/drawings/d/11dUuVAxSArPR8T-W1EyGygs8cY5ygGdFkkStQ_7zwgQ/edit?usp=sharing" target="_blank">
-                                    Icons comparison and recommendations
-                                    <small><i class="fas fa-external-link-alt fa-sm"></i></small>
-                                </a>
-                            </p>
-                        </div><!-- / Text Annotations image-->
-
-                    </div><!-- / next content... -->
+                        </p>
+                    </div><!-- / Navigation - Annotations panel - image-->
 
 
                     <div class="col-sm-12">
