@@ -1,0 +1,108 @@
+<!--Current UI code of text annotation interface-->
+<!--Commit name - hxat-textAnnotation_navbar-->
+
+
+
+
+
+<!--css/annotation_base.4c072fc38ef7.css-->
+#navigationBar {
+    position: fixed;
+    height: 50px;
+    background: black;
+    top: 0;
+    display: block;
+    width: 100%;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.pagination {
+    width: 300px;
+    overflow: auto;
+    margin-top: 0px;
+}
+
+#keyboard-input-toggle-text {
+    margin-right: 20px;
+    float: right;
+    margin-top: 10px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+.annotation-fullscreen {
+    color: white;
+    float: right;
+    margin-right: 50px;
+    margin-top: 5px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.handle-button {
+    position: absolute;
+    float: right;
+    top: 5px;
+    right: 15px;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+<!--css/instructions.92de67b8ccc3.css-->
+.target-object-controls {
+    padding: 10px 0;
+    margin: 10px 0 0 0;
+}
+
+<!--UI code-->
+<nav role="navigation" id="navigationBar" aria-label="Annotation Tool">
+
+    <div class="pagination">
+
+
+    </div>
+
+    <div class="annotation-fullscreen clicking_allowed" tabindex="0" role="button" aria-label="Toggle Fullscreen Mode">
+        <i class="fa fa-expand"></i>
+    </div>
+
+
+    <div role="button"
+         aria-label="Use Keyboard Input to make annotations. To make an annotation, click the 'Make an Annotation' button. You will be taken to back to the content where you can add an asterisk (*) to the beginning and an asterisk(*) to the end of the area you would like to select. Make sure not to edit any other parts of the text! Then hit the 'Save Highlights' button."
+         class="fa fa-keyboard-o clicking_allowed" title="Make annotations using keyboard input"
+         id="keyboard-input-toggle-text" tabindex="0"></div>
+
+
+    <div class="logo" aria-label="HarvardX Logo">
+        <img src="/static/css/images/hx_inv.feb90e6fec5b.png" style="height:40px;" alt="HarvardX Logo">
+    </div>
+
+    <div class="handle-button clicking_allowed" tabindex="0" title="Hide/Show dashboard"
+         aria-labeledby="sidebar-hide-sidebar-instructions" role="button"><i class="fa fa-navicon"></i></div>
+</nav>
+
+...
+
+<div class="btn-toolbar target-object-controls" role="toolbar" aria-label="Annotation toolbar controls">
+    <div class="btn-group" role="group" aria-label="Hide or Show Annotations">
+        <button id="annotations-status" type="button" class="btn btn-default on" aria-label="Hide Annotations">
+            <i class="fa fa-close"></i> <span class="labeltext">Hide Annotations</span>
+        </button>
+    </div>
+    <div class="btn-group" role="group" aria-label="Control Annotation Text Size" aria-live="polite">
+        <div class="pull-left" style="padding: 6px 12px;">Text Size <span
+                id="annotations-text-size-label">(default)</span>:
+        </div>
+        <button aria-label="Increase font size" id="annotations-text-size-plus" type="button" class="btn btn-default"
+                role="button">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+        <button aria-label="Decrease font size" id="annotations-text-size-minus" type="button" class="btn btn-default"
+                role="button">
+            <i class="fa fa-minus" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
