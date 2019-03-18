@@ -8,8 +8,8 @@
 <!--css/annotation_base.4c072fc38ef7.css-->
 #navigationBar {
     position: fixed;
-    height: 50px;
-    background: black;
+    height: 46px;
+    background: #dddddd;
     top: 0;
     display: block;
     width: 100%;
@@ -18,9 +18,10 @@
 }
 
 .pagination {
-    width: 300px;
+    width: 200px;
     overflow: auto;
     margin-top: 0px;
+    margin-left: 1em;
 }
 
 #keyboard-input-toggle-text {
@@ -28,23 +29,23 @@
     float: right;
     margin-top: 10px;
     font-size: 2em;
-    color: white;
+    color: black;
     cursor: pointer;
 }
 
 .annotation-fullscreen {
-    color: white;
+    color: black;
     float: right;
-    margin-right: 50px;
-    margin-top: 5px;
-    font-size: 2em;
+    margin-right: 53px;
+    margin-top: 9px;
+    font-size: 1.5em;
     cursor: pointer;
 }
 
 .handle-button {
     position: absolute;
     float: right;
-    top: 5px;
+    top: 10px;
     right: 15px;
     font-size: 2em;
     color: white;
@@ -54,13 +55,31 @@
 <!--css/instructions.92de67b8ccc3.css-->
 .target-object-controls {
     padding: 10px 0;
-    margin: 10px 0 0 0;
+    margin: 4px 0 0 0;
 }
 
 <!--UI code-->
 <nav role="navigation" id="navigationBar" aria-label="Annotation Tool">
 
     <div class="pagination">
+
+        <div class="btn-toolbar target-object-controls" role="toolbar" aria-label="Annotation toolbar controls">
+            <div class="btn-group" role="group" aria-label="Hide or Show Annotations">
+                <i class="fa fa-lg fa-comments"></i> <span class="labeltext" hidden>Hide or Show Annotations</span>
+            </div>
+            <div class="btn-group" role="group" aria-label="Control Annotation Text Size" aria-live="polite">
+                <div class="pull-left" style="padding: 6px 12px;" hidden>Text Size <span id="annotations-text-size-label">(default)</span>:
+                </div>
+                <a aria-label="Increase font size" id="annotations-text-size-plus" type="button"
+                        role="button" style="color: black; text-decoration: none; margin-left: .5em;">
+                    <i class="fa fa-font" aria-hidden="true"></i><small><i class="fa fa-plus" aria-hidden="true"></i></small>
+                </a>
+                <a aria-label="Decrease font size" id="annotations-text-size-minus" type="button"
+                        role="button" style="color: black; text-decoration: none; margin-left: .5em;">
+                    <i class="fa fa-font" aria-hidden="true"></i><small><i class="fa fa-minus" aria-hidden="true"></i></small>
+                </a>
+            </div>
+        </div>
 
 
     </div>
@@ -76,7 +95,7 @@
          id="keyboard-input-toggle-text" tabindex="0"></div>
 
 
-    <div class="logo" aria-label="HarvardX Logo">
+    <div class="logo" aria-label="HarvardX Logo" hidden>
         <img src="/static/css/images/hx_inv.feb90e6fec5b.png" style="height:40px;" alt="HarvardX Logo">
     </div>
 
@@ -86,23 +105,4 @@
 
 ...
 
-<div class="btn-toolbar target-object-controls" role="toolbar" aria-label="Annotation toolbar controls">
-    <div class="btn-group" role="group" aria-label="Hide or Show Annotations">
-        <button id="annotations-status" type="button" class="btn btn-default on" aria-label="Hide Annotations">
-            <i class="fa fa-close"></i> <span class="labeltext">Hide Annotations</span>
-        </button>
-    </div>
-    <div class="btn-group" role="group" aria-label="Control Annotation Text Size" aria-live="polite">
-        <div class="pull-left" style="padding: 6px 12px;">Text Size <span
-                id="annotations-text-size-label">(default)</span>:
-        </div>
-        <button aria-label="Increase font size" id="annotations-text-size-plus" type="button" class="btn btn-default"
-                role="button">
-            <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
-        <button aria-label="Decrease font size" id="annotations-text-size-minus" type="button" class="btn btn-default"
-                role="button">
-            <i class="fa fa-minus" aria-hidden="true"></i>
-        </button>
-    </div>
-</div>
+
